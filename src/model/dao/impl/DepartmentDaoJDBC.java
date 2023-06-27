@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import db.DB;
 import db.DbException;
@@ -79,7 +77,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 				Department dep = instantiateDepartment(rs);
 				list.add(dep);
 			}
-			return null;
+			return list;
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
 		} finally {
